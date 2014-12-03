@@ -1,0 +1,16 @@
+{
+    "name": "asfalots/snmp",
+    "description": "Very simple wrapper to use snmp shell command if you don't have php snmp in you php installation",
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "homepage": "https://github.com/asfalots/snmp",
+    "authors": [
+        {
+            "name": "Erwan Grooters",
+            "email": "grooters.erwan@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"SNMP\\": "src/SNMP/"}
+    }
+}

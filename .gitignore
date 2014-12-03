@@ -1,0 +1,5 @@
+vendor/
+public/
+composer.phar
+!.gitignore
+.idea
