@@ -6,8 +6,7 @@
     "homepage": "https://github.com/asfalots/snmp",
     "authors": [
         {
-            "name": "Erwan Grooters",
-            "email": "grooters.erwan@gmail.com"
+            "name": "Asfalots"
         }
     ],
     "autoload": {
