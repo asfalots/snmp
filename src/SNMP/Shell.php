@@ -10,6 +10,11 @@ namespace SNMP;
 
 
 class Shell implements SNMPInterface{
+
+    const VERSION_1 = 1 ;
+    const VERSION_2C = "2c" ;
+    const VERSION_3 = 3 ;
+
     protected $_options=array();
     protected $_lastRequest;
     protected $_lastResponse;
@@ -46,7 +51,7 @@ class Shell implements SNMPInterface{
         $this->_lastRequest = '/usr/bin/'.$bin.' '.$this->getOptionsAsString().' ' . $this->_host . ' ' . $mib . ' '.$type . ' ' . $value;
         exec($this->_lastRequest, $output, $return);
         if($return > 0){
-            throw new RuntimeException(implode($output, "\n"));
+            throw new \RuntimeException(implode($output, "\n"));
         }
         $this->_lastResponse = $output;
         return $output;
