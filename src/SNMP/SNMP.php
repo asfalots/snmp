@@ -42,7 +42,8 @@ class SNMP implements SNMPInterface{
         return $this;
     }
 
-    public function get($mib){
+    public function get($mib, $preserve_key=false){
+
         $output = $this->exec('snmpget',$mib);
         return $output[0];
     }
@@ -65,7 +66,7 @@ class SNMP implements SNMPInterface{
         return $this->_lastResponse;
     }
 
-    public function walk($mib){
+    public function walk($mib, $suffixe_as_key=false, $max_repetitions=null, $non_repeaters=null){
         return $this->exec('snmpwalk', $mib);
     }
 
