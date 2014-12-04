@@ -9,7 +9,7 @@
 namespace SNMP;
 
 
-class Shell implements SNMPInterface{
+class SNMP implements SNMPInterface{
 
     const VERSION_1 = 1 ;
     const VERSION_2C = "2c" ;
@@ -35,7 +35,7 @@ class Shell implements SNMPInterface{
 
     /**
      * @param array $options    Shell options as defined in man
-     * @return \SNMP\Shell
+     * @return \SNMP\SNMP
      */
     public function setOption(array $options){
         $this->_options = array_merge($this->_options, $options);
@@ -72,4 +72,24 @@ class Shell implements SNMPInterface{
     public function set($mib, $type, $value){
 
     }
-} 
+
+    public function close()
+    {
+        return true;
+    }
+
+    public function setSecurity($sec_level, $auth_protocol, $auth_passphrase, $priv_protocol, $priv_passphrase, $contextName, $contextEngineID)
+    {
+        // TODO: Implement setSecurity() method.
+    }
+
+    public function getErrno()
+    {
+        // TODO: Implement getErrno() method.
+    }
+
+    public function getnext($object_id)
+    {
+        // TODO: Implement getnext() method.
+    }
+}
